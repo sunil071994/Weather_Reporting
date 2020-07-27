@@ -1,0 +1,103 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-07-27T13:47:51.454Z",
+        "line": 11,
+        "name": "Verify weather reporting done by two sources",
+        "description": "",
+        "id": "validating-weather-reporting;verify-weather-reporting-done-by-two-sources;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 49440022800,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Select browser \"Chrome\" and launch website \"https://www.ndtv.com/\" and click on weather",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Chrome\"",
+                  "offset": 15
+                },
+                {
+                  "val": "\"https://www.ndtv.com/\"",
+                  "offset": 43
+                }
+              ],
+              "location": "WeatherReportingSteps.select_browser_and_launch_website(String,String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1678364800,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Select city name \"Ajmer\" and validate temperature information",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Ajmer\"",
+                  "offset": 17
+                }
+              ],
+              "location": "WeatherReportingSteps.select_city_name_from_and_validate_temperature_information(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4710707600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "get the temperature information for same city \"Ajmer\" using Rest Api",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Ajmer\"",
+                  "offset": 46
+                }
+              ],
+              "location": "WeatherReportingSteps.get_the_temperature_information_for_same_city_using_Rest_Api(String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.Exception: Test case Failed\r\n\tat pageObject.WeatherReportingPage.temperature_information_received_by_two_sources(WeatherReportingPage.java:129)\r\n\tat stepDefination.WeatherReportingSteps.validate_temperature_information_received_by_two_sources(WeatherReportingSteps.java:30)\r\n\tat ✽.validate temperature information received  by two sources(file:src/test/java/Features/WeatherReporting.feature:7)\r\n",
+              "duration": 3556300,
+              "status": "failed"
+            },
+            "line": 7,
+            "name": "validate temperature information received  by two sources",
+            "match": {
+              "location": "WeatherReportingSteps.validate_temperature_information_received_by_two_sources()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@WeatherReporting"
+          },
+          {
+            "name": "@Regression"
+          }
+        ]
+      }
+    ],
+    "name": "Validating Weather Reporting",
+    "description": "",
+    "id": "validating-weather-reporting",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/Features/WeatherReporting.feature",
+    "tags": []
+  }
+]
